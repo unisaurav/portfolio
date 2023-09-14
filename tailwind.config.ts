@@ -15,7 +15,8 @@ const config: Config = {
       },
       colors: {
         'primary-blue': '#202235',
-        'bgcard' : '#232639'
+        'bgcard' : '#232639',
+        'menu-color' : '#545a80'
       },
     },
   },

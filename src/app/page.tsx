@@ -1,14 +1,17 @@
 // import Image from "next/image";
+"use client";
 import { Poppins } from "next/font/google";
+import { useState } from "react";
 
 const poppins = Poppins({ weight: "400", subsets: ["latin"] });
 
 export default function Home() {
   const cardStyle =
-    "flex h-full md:w-1/5 p-2 m-4 w-64 shadow-md  bg-bgcard  text-slate-300   flex-col gap-3 m-5 rounded-md ";
+    "flex h-full md:w-1/4 p-2 m-4 w-3/4 shadow-md  bg-bgcard  text-slate-300   flex-col gap-3 m-5 rounded-md ";
   const cardStyleCircle =
-    "flex md:bg-[url('/sauravimg.jpg')] shadow-md shadow-slate-400 bg-center bg-cover object-scale-down h-64 md:w-64 p-2 m-4 w-64 bg-white  text-slate-300   flex-col  rounded-full";
+    "flex md:bg-[url('/sauravimg.jpg')] bg-[url('/sauravimg.jpg')]  shadow-md shadow-slate-400 bg-center bg-cover object-scale-down h-64 md:w-64 p-2 m-4 w-64 bg-white  text-slate-300   flex-col  rounded-full";
 
+  const [showMenu, setMenu] = useState(false);
   const programmingLang = [
     "HTML/HTML5, CSS/CSS3, SAAS",
     "JavaScript",
@@ -29,24 +32,179 @@ export default function Home() {
 
   return (
     <main
-      className={`flex min-h-screen flex-col ${poppins.className} bg-primary-blue`}
+      className={`flex min-h-screen flex-col ${poppins.className} bg-primary-blue scroll-smooth`}
     >
-      <div className="flex flex-row-reverse h-26  py-4 md:gap-12 gap-5 md:pr-20 pr-10">
-        <h2 className="hover:text-[#C13948]">Home</h2>
-        <h2 className="hover:text-[#C13948]">About Me</h2>
+      <div className="md:flex hidden flex-row-reverse h-26  py-4 md:gap-12 gap-5 md:pr-20 pr-10  ">
+        <div>
+          <h2 className="hover:text-[#C13948] transition-all ">Home</h2>
+        </div>
+        <h2 className="hover:text-[#C13948] transition-all">About Me</h2>
         <a href="#skills">
-          <h2 className="hover:text-[#C13948]">Skills</h2>
+          <h2
+            className="hover:text-[#C13948] transition-all"
+          >
+            Skills
+          </h2>
         </a>
-        <h2 className="hover:text-[#C13948]">Contact</h2>
+        <h2 className="hover:text-[#C13948] transition-all">Contact</h2>
         <a href="#about">
-          <h2 className="hover:text-[#C13948]">CV</h2>
+          <h2 className="hover:text-[#C13948] transition-all ">CV</h2>
         </a>
       </div>
+      <div className="p-6 md:hidden">
+        <button onClick={() => setMenu(!showMenu)}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            className="lucide lucide-align-justify"
+          >
+            <line x1="3" x2="21" y1="6" y2="6" />
+            <line x1="3" x2="21" y1="12" y2="12" />
+            <line x1="3" x2="21" y1="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <div
+        className={`flex flex-col absolute shadow-md w-64 h-full bg-menu-color transition-all rounded-sm ${
+          !showMenu ? `-translate-x-full` : `translate-x-50`
+        }`}
+      >
+        <div className="p-6 flex flex-row-reverse">
+          <button onClick={() => setMenu(!showMenu)}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              className="lucide lucide-x"
+            >
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+        </div>
+        <div className="flex flex-col pl-10">
+          <div className="flex flex-row gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="White"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              className="lucide lucide-home"
+            >
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+            <h2 className="hover:text-[#C13948] transition-all ">Home</h2>
+          </div>{" "}
+          <div className="flex flex-row gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              className="lucide lucide-user-2"
+            >
+              <circle cx="12" cy="8" r="5" />
+              <path d="M20 21a8 8 0 1 0-16 0" />
+            </svg>
+            <h2 className="hover:text-[#C13948] transition-all">About Me</h2>{" "}
+          </div>
+          <div className="flex flex-row gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              className="lucide lucide-graduation-cap"
+            >
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+              <path d="M6 12v5c3 3 9 3 12 0v-5" />
+            </svg>
+            <a href="#skills">
+              <h2 className="hover:text-[#C13948] transition-all">Skills</h2>
+            </a>{" "}
+          </div>
+          <div className="flex flex-row gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              className="lucide lucide-graduation-cap"
+            >
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+              <path d="M6 12v5c3 3 9 3 12 0v-5" />
+            </svg>
+
+            <h2 className="hover:text-[#C13948] transition-all">Contact</h2>
+          </div>
+          <div className="flex flex-row gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              className="lucide lucide-download"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" x2="12" y1="15" y2="3" />
+            </svg>
+
+            <a href="#about">
+              <h2 className="hover:text-[#C13948] transition-all">CV</h2>
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div className="bg-scroll md:bg-[url('/sknew.png')] bg-bgcard  w-full aspect-auto bg-cover md:bg-no-repeat bg-repeat-y md:h-96 h-auto md:pl-28 pl-10 pt-32 flex flex-row">
         <div className="w-full md:w-[35%]  h-auto flex flex-col md:pb-0 pb-10">
           <p className="font-bold text-4xl">Saurav Kitukale</p>
           <p className="font-thin text-xl text-slate-400">
-            I am Saurav, professional web developer with long time experince and goal-oriented professional with extensive 4+ years of experience as a Frontend developer, developing and managing applications for leading clients in BFSI clients in the UK
+            I am Saurav, professional web developer with long time experince and
+            goal-oriented professional with extensive 4+ years of experience as
+            a Frontend developer, developing and managing applications for
+            leading clients in BFSI clients in the UK
           </p>
         </div>
         {/* <Image
