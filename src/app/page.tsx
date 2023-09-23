@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import { Poppins } from "next/font/google";
 import { useState } from "react";
@@ -40,7 +40,7 @@ export default function Home() {
       className={`flex min-h-screen flex-col ${poppins.className} bg-primary-blue scroll-smooth`}
     >
       <div className="md:flex hidden flex-row-reverse h-26  py-4 md:gap-12 gap-5 md:pr-20 pr-10  ">
-        <a download href={`https://${process.env.VERCEL_URL}/Saurav_Kitukale_CV.pdf`}>
+        <a href={`/Saurav_Kitukale_CV.pdf`} target="_blank">
           <h2 className="hover:text-[#C13948]">CV</h2>
         </a>
         <a href="#skills">
@@ -50,7 +50,7 @@ export default function Home() {
           <h2 className="hover:text-[#C13948]">About Me</h2>
         </a>
 
-        <a href="#about" >
+        <a href="#about">
           <h2 className="hover:text-[#C13948]">Contact</h2>
         </a>
 
@@ -210,7 +210,11 @@ export default function Home() {
               <line x1="12" x2="12" y1="15" y2="3" />
             </svg>
 
-            <a download href="/Saurav_Kitukale_CV.pdf" title="Downlaod CV">
+            <a
+              target="_blank"
+              href="/Saurav_Kitukale_CV.pdf"
+              title="Downlaod CV"
+            >
               <h2 className="hover:text-[#C13948] transition-all">CV</h2>
             </a>
           </div>
