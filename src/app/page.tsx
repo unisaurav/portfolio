@@ -1,5 +1,5 @@
+"use client"
 import Image from "next/image";
-"use client";
 import { Poppins } from "next/font/google";
 import { useState } from "react";
 
@@ -266,8 +266,10 @@ export default function Home() {
             </div>
             <div className="flex flex-col pl-10">
               <ul className="list-disc">
-                {programmingLang.map((item) => (
-                  <li className="font-thin text-sm">{item}</li>
+                {programmingLang.map((item, key) => (
+                  <li className="font-thin text-sm" key={key}>
+                    {item}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -295,8 +297,10 @@ export default function Home() {
 
             <div className="flex flex-col pl-10">
               <ul className="list-disc">
-                {frameWork.map((item) => (
-                  <li className="font-thin text-sm">{item}</li>
+                {frameWork.map((item, key) => (
+                  <li className="font-thin text-sm" key={key}>
+                    {item}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -329,8 +333,10 @@ export default function Home() {
             </div>
             <div className="flex flex-col pl-10">
               <ul className="list-disc">
-                {toolsAndTech.map((item) => (
-                  <li className="font-thin text-sm">{item}</li>
+                {toolsAndTech.map((item, key) => (
+                  <li className="font-thin text-sm" key={key}>
+                    {item}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -352,10 +358,10 @@ export default function Home() {
           <div className="h-full md:w-1/2 w-[90%]">
             <p className="text-xl">Hi Folks</p>
             <p>
-              I'm Senior software developer with expertise in front-end and back-end
-              development, experienced in leading cross-functional teams. Proven
-              track record of delivering high-quality software solutions that
-              meet and exceed client expectations.
+              I'm Senior software developer with expertise in front-end and
+              back-end development, experienced in leading cross-functional
+              teams. Proven track record of delivering high-quality software
+              solutions that meet and exceed client expectations.
             </p>
             <div className="flex flex-row gap-5 justify-between">
               <div className="flex flex-col gap-2">
