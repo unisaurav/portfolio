@@ -210,7 +210,7 @@ export default function Home() {
               <line x1="12" x2="12" y1="15" y2="3" />
             </svg>
 
-            <a download href="/Saurav_kitukale_CV.pdf" title="Downlaod CV">
+            <a download href="/Saurav_Kitukale_CV.pdf" title="Downlaod CV">
               <h2 className="hover:text-[#C13948] transition-all">CV</h2>
             </a>
           </div>
