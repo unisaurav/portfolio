@@ -219,7 +219,7 @@ export default function Home() {
 
       <div className="bg-scroll md:bg-[url('/sknew.png')] bg-bgcard  w-full aspect-auto bg-cover md:bg-no-repeat bg-repeat-y md:h-96 h-auto md:pl-28 pl-10 pt-32 flex flex-row">
         <div className="w-full md:w-[50%]  h-auto flex flex-col md:pb-0 pb-10">
-          <p className="font-bold text-4xl">Hi, I'm Saurav Kitukale</p>
+          <p className="font-bold text-4xl">Hi, I&apos;m Saurav Kitukale</p>
           <p className="font-thin text-xl text-slate-400">
             Professional Front-end developer with long time experince and
             goal-oriented professional with extensive 5+ years of experience as
@@ -358,7 +358,7 @@ export default function Home() {
           <div className="h-full md:w-1/2 w-[90%]">
             <p className="text-xl">Hi Folks</p>
             <p>
-              I'm Senior software developer with expertise in front-end and
+              I&apos;m Senior software developer with expertise in front-end and
               back-end development, experienced in leading cross-functional
               teams. Proven track record of delivering high-quality software
               solutions that meet and exceed client expectations.
