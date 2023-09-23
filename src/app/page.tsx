@@ -40,7 +40,7 @@ export default function Home() {
       className={`flex min-h-screen flex-col ${poppins.className} bg-primary-blue scroll-smooth`}
     >
       <div className="md:flex hidden flex-row-reverse h-26  py-4 md:gap-12 gap-5 md:pr-20 pr-10  ">
-        <a download href="/Saurav_kitukale_CV.pdf">
+        <a download href={`${process.env.VERCEL_URL}/Saurav_kitukale_CV.pdf`}>
           <h2 className="hover:text-[#C13948]">CV</h2>
         </a>
         <a href="#skills">
@@ -50,7 +50,7 @@ export default function Home() {
           <h2 className="hover:text-[#C13948]">About Me</h2>
         </a>
 
-        <a href="#about" onClick={() => setMenu(!showMenu)}>
+        <a href="#about" >
           <h2 className="hover:text-[#C13948]">Contact</h2>
         </a>
 
