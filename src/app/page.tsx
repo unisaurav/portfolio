@@ -41,7 +41,7 @@ export default function Home() {
     >
       <div className="md:flex hidden flex-row-reverse h-26  py-4 md:gap-12 gap-5 md:pr-20 pr-10  ">
         <a
-          href={`https://${process.env.VERCEL}/Saurav_Kitukale_CV.pdf`}
+          href={`https://${process.env.VERCEL_URL}/Saurav_Kitukale_CV.pdf`}
           target="_blank"
         >
           <h2 className="hover:text-[#C13948]">CV</h2>
@@ -215,7 +215,7 @@ export default function Home() {
 
             <a
               target="_blank"
-              href={`https://${process.env.VERCEL}/Saurav_Kitukale_CV.pdf`}
+              href={`https://${process.env.VERCEL_URL}/Saurav_Kitukale_CV.pdf`}
               title="Downlaod CV"
             >
               <h2 className="hover:text-[#C13948] transition-all">CV</h2>
