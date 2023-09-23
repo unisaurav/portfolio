@@ -1,4 +1,4 @@
-// import Image from "next/image";
+import Image from "next/image";
 "use client";
 import { Poppins } from "next/font/google";
 import { useState } from "react";
@@ -28,28 +28,33 @@ export default function Home() {
     "Express",
     "Numpy/Pandas/scikit-learn",
   ];
-  const toolsAndTech = ["Git", "Jira", "Confluence", "Aws"];
+  const toolsAndTech = [
+    "Git",
+    "Jira",
+    "Confluence",
+    "Aws [CodeCommit, CodeBuild, CodeDeploy, Lambda]",
+  ];
 
   return (
     <main
       className={`flex min-h-screen flex-col ${poppins.className} bg-primary-blue scroll-smooth`}
     >
       <div className="md:flex hidden flex-row-reverse h-26  py-4 md:gap-12 gap-5 md:pr-20 pr-10  ">
-        <div>
-          <h2 className="hover:text-[#C13948] transition-all ">Home</h2>
-        </div>
-        <h2 className="hover:text-[#C13948] transition-all">About Me</h2>
+        <a download href="/Saurav_kitukale_CV.pdf">
+          <h2 className="hover:text-[#C13948]">CV</h2>
+        </a>
         <a href="#skills">
-          <h2
-            className="hover:text-[#C13948] transition-all"
-          >
-            Skills
-          </h2>
+          <h2 className="hover:text-[#C13948] transition-all">Skills</h2>
         </a>
-        <h2 className="hover:text-[#C13948] transition-all">Contact</h2>
         <a href="#about">
-          <h2 className="hover:text-[#C13948] transition-all ">CV</h2>
+          <h2 className="hover:text-[#C13948]">About Me</h2>
         </a>
+
+        <a href="#about" onClick={() => setMenu(!showMenu)}>
+          <h2 className="hover:text-[#C13948]">Contact</h2>
+        </a>
+
+        <h2 className="hover:text-[#C13948]">Home</h2>
       </div>
       <div className="p-6 md:hidden">
         <button onClick={() => setMenu(!showMenu)}>
@@ -60,9 +65,9 @@ export default function Home() {
             viewBox="0 0 24 24"
             fill="none"
             stroke="white"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
             className="lucide lucide-align-justify"
           >
             <line x1="3" x2="21" y1="6" y2="6" />
@@ -86,9 +91,9 @@ export default function Home() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="lucide lucide-x"
             >
               <path d="M18 6 6 18" />
@@ -105,9 +110,9 @@ export default function Home() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="White"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="lucide lucide-home"
             >
               <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -115,7 +120,10 @@ export default function Home() {
             </svg>
             <h2 className="hover:text-[#C13948] transition-all ">Home</h2>
           </div>{" "}
-          <div className="flex flex-row gap-2">
+          <div
+            className="flex flex-row gap-2"
+            onClick={() => setMenu(!showMenu)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"
@@ -123,17 +131,22 @@ export default function Home() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="lucide lucide-user-2"
             >
               <circle cx="12" cy="8" r="5" />
               <path d="M20 21a8 8 0 1 0-16 0" />
             </svg>
-            <h2 className="hover:text-[#C13948] transition-all">About Me</h2>{" "}
+            <a href="#about">
+              <h2 className="hover:text-[#C13948] transition-all">About Me</h2>
+            </a>
           </div>
-          <div className="flex flex-row gap-2">
+          <div
+            className="flex flex-row gap-2"
+            onClick={() => setMenu(!showMenu)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -141,9 +154,9 @@ export default function Home() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="lucide lucide-graduation-cap"
             >
               <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
@@ -153,7 +166,10 @@ export default function Home() {
               <h2 className="hover:text-[#C13948] transition-all">Skills</h2>
             </a>{" "}
           </div>
-          <div className="flex flex-row gap-2">
+          <div
+            className="flex flex-row gap-2"
+            onClick={() => setMenu(!showMenu)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -161,18 +177,22 @@ export default function Home() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="lucide lucide-graduation-cap"
             >
               <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
               <path d="M6 12v5c3 3 9 3 12 0v-5" />
             </svg>
-
-            <h2 className="hover:text-[#C13948] transition-all">Contact</h2>
+            <a href="#about">
+              <h2 className="hover:text-[#C13948] transition-all">Contact</h2>
+            </a>
           </div>
-          <div className="flex flex-row gap-2">
+          <div
+            className="flex flex-row gap-2"
+            onClick={() => setMenu(!showMenu)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -180,9 +200,9 @@ export default function Home() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               className="lucide lucide-download"
             >
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -190,7 +210,7 @@ export default function Home() {
               <line x1="12" x2="12" y1="15" y2="3" />
             </svg>
 
-            <a href="#about">
+            <a download href="/Saurav_kitukale_CV.pdf" title="Downlaod CV">
               <h2 className="hover:text-[#C13948] transition-all">CV</h2>
             </a>
           </div>
@@ -198,11 +218,11 @@ export default function Home() {
       </div>
 
       <div className="bg-scroll md:bg-[url('/sknew.png')] bg-bgcard  w-full aspect-auto bg-cover md:bg-no-repeat bg-repeat-y md:h-96 h-auto md:pl-28 pl-10 pt-32 flex flex-row">
-        <div className="w-full md:w-[35%]  h-auto flex flex-col md:pb-0 pb-10">
-          <p className="font-bold text-4xl">Saurav Kitukale</p>
+        <div className="w-full md:w-[50%]  h-auto flex flex-col md:pb-0 pb-10">
+          <p className="font-bold text-4xl">Hi, I'm Saurav Kitukale</p>
           <p className="font-thin text-xl text-slate-400">
-            I am Saurav, professional web developer with long time experince and
-            goal-oriented professional with extensive 4+ years of experience as
+            Professional Front-end developer with long time experince and
+            goal-oriented professional with extensive 5+ years of experience as
             a Frontend developer, developing and managing applications for
             leading clients in BFSI clients in the UK
           </p>
@@ -216,18 +236,17 @@ export default function Home() {
         /> */}
       </div>
       <div
-        className="flex flex-col items-center justify-center gap-4 pt-10 md:h-96 h-auto md:mb-14 mb-10"
+        className="flex flex-col items-center justify-center gap-4 pt-06 md:h-96 h-auto md:mb-14 mb-10"
         id="skills"
       >
-        {/* <p className="text-[#C13948] place-items-center">Skills</p> */}
-        <p className="place-items-center font-bold text-2xl">My Skills</p>
-        <p className="place-items-center text-slate-300 text-sm">
+        <p className="place-items-center font-bold text-2xl">My Expertise</p>
+        {/* <p className="place-items-center text-slate-300 text-sm">
           Some Dummy text describing my skills
-        </p>
+        </p> */}
         <hr className="w-20 h-0.5 bg-[#C13948] border-0 rounded" />
         <div className="flex md:flex-row flex-col flex-wrap md:gap-10 w-full items-center justify-center">
           <div className={cardStyle}>
-            <div className="flex flex-row gap-2">
+            <div className="flex flex-row gap-2 ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -235,9 +254,9 @@ export default function Home() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="#C13948"
-                stroke-width="1.75"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.75"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="lucide lucide-code"
               >
                 <polyline points="16 18 22 12 16 6" />
@@ -262,9 +281,9 @@ export default function Home() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="#C13948"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="lucide lucide-layout"
               >
                 <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
@@ -291,9 +310,9 @@ export default function Home() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="#C13948"
-                stroke-width="1.75"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.75"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="lucide lucide-brain-circuit"
               >
                 <path d="M12 4.5a2.5 2.5 0 0 0-4.96-.46 2.5 2.5 0 0 0-1.98 3 2.5 2.5 0 0 0-1.32 4.24 3 3 0 0 0 .34 5.58 2.5 2.5 0 0 0 2.96 3.08 2.5 2.5 0 0 0 4.91.05L12 20V4.5Z" />
@@ -306,7 +325,7 @@ export default function Home() {
                 <path d="M20.5 21a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z" />
                 <path d="M18.5 3a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z" />
               </svg>
-              <p className="font-bold text-l">Technologies</p>
+              <p className="font-bold text-l">Tools and Technologies</p>
             </div>
             <div className="flex flex-col pl-10">
               <ul className="list-disc">
@@ -322,45 +341,46 @@ export default function Home() {
         <p className="place-items-center font-bold text-2xl" id="about">
           About Me{" "}
         </p>
-        <p className="place-items-center text-slate-300 text-sm">
-          Some Dummy text describing About me
-        </p>
+        {/* <p className="place-items-center text-slate-300 text-sm">
+          {"<AboutMe >"}
+        </p> */}
         <hr className="w-20 h-0.5 bg-[#C13948] border-0 rounded" />
         <div className="flex md:flex-row flex-col w-full items-center gap-10 md:pl-[25%]">
           <div className="h-full ">
-            {/* <Image
-              src="/next.svg"
-              width={100}
-              height={100}
-              alt="img"
-              quality={100}
-            /> */}
             <div className={cardStyleCircle}></div>
           </div>
           <div className="h-full md:w-1/2 w-[90%]">
-            <p className="text-xl">Hi There </p>
+            <p className="text-xl">Hi Folks</p>
             <p>
-              My name is saurav am web devloper skilled in React, node and Next
-              worked on multiple tech stach wrt fontend etc blah blah
-            </p>
-            <p>
-              My name is saurav am web devloper skilled in React, node and Next
-              worked on multiple tech stach wrt fontend etc blah blah
+              I'm Senior software developer with expertise in front-end and back-end
+              development, experienced in leading cross-functional teams. Proven
+              track record of delivering high-quality software solutions that
+              meet and exceed client expectations.
             </p>
             <div className="flex flex-row gap-5 justify-between">
               <div className="flex flex-col gap-2">
                 <p className="text-[#C13948] place-items-center">Name</p>
                 <p className=" place-items-center">Saurav Kitukale</p>
                 <p className="text-[#C13948] place-items-center">Email</p>
-                <p className=" place-items-center">Unisaurav@gmail.com</p>
+                <a
+                  className=" place-items-center underline-offset-2 underline"
+                  href="mailto:unisaurav@gmail.com"
+                >
+                  unisaurav@gmail.com
+                </a>
               </div>
               <div className="flex flex-col gap-2">
                 <p className="text-[#C13948] place-items-center">Phone No</p>
                 <p className=" place-items-center">07442775523 </p>
                 <p className="text-[#C13948] place-items-center">Github</p>
-                <p className=" place-items-center" id="here">
+                <a
+                  className=" place-items-center underline-offset-2 underline"
+                  id="here"
+                  target="_blank"
+                  href="https://github.com/unisaurav"
+                >
                   unisaurav
-                </p>
+                </a>
               </div>
             </div>
           </div>
